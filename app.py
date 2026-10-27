@@ -32,7 +32,7 @@ st.set_page_config(page_title="Evaluador de Estrés", page_icon="🧠", layout="
 st.title("🧠 Evaluador de Estrés con IA")
 st.caption("Conversación natural para detectar estrés y riesgo de renuncia o abandono universitario")
 if "messages" not in st.session_state:
-st.session_state.messages = [
+    st.session_state.messages = [
 {
 "role": "assistant",
 "content": "Hola 👋 Puedes contarme cómo te estás sintiendo respecto a tu trabajo o tus estudios. ¿Cómo te has sentido últimamente?"
