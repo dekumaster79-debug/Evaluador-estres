@@ -68,7 +68,7 @@ model=MODELO,
 messages=[{"role": "system", "content": SYSTEM_PROMPT}] +
 [{"role": m["role"], "content": m["content"]} for m in st.session_state.messages],
 temperature=0.7,
-)
+) que 
 respuesta = response.choices[0].message.content
 
 st.markdown(respuesta)
