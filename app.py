@@ -39,12 +39,12 @@ if "messages" not in st.session_state:
 }
 ]
 if "analisis_final" not in st.session_state:
-st.session_state.analisis_final = None
+    st.session_state.analisis_final = None
 for msg in st.session_state.messages:
 with st.chat_message(msg["role"]):
 st.markdown(msg["content"])
 if prompt := st.chat_input("Cuéntame cómo te sientes..."):
-st.session_state.messages.append({"role": "user", "content": prompt})         
+    st.session_state.messages.append({"role": "user", "content": prompt})         
 with st.chat_message("user"):
 st.markdown(prompt)
 with st.chat_message("assistant"):
