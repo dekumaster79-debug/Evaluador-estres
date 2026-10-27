@@ -34,7 +34,7 @@ st.caption("Conversación natural para detectar estrés y riesgo de renuncia o a
 if "messages" not in st.session_state:
 st.session_state.messages = [
 {
-“role”: “assistant”,
+"role": "assistant",
 “content”: “Hola 👋 Puedes contarme cómo te estás sintiendo respecto a tu trabajo o tus estudios. ¿Cómo te has sentido últimamente?”
 }
 ]
