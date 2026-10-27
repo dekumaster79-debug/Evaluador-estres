@@ -35,7 +35,7 @@ if "messages" not in st.session_state:
 st.session_state.messages = [
 {
 "role": "assistant",
-“content”: “Hola 👋 Puedes contarme cómo te estás sintiendo respecto a tu trabajo o tus estudios. ¿Cómo te has sentido últimamente?”
+"content": "Hola 👋 Puedes contarme cómo te estás sintiendo respecto a tu trabajo o tus estudios. ¿Cómo te has sentido últimamente?"
 }
 ]
 if "analisis_final" not in st.session_state:
