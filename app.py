@@ -42,11 +42,11 @@ if "analisis_final" not in st.session_state:
     st.session_state.analisis_final = None
 for msg in st.session_state.messages:
 with st.chat_message(msg["role"]):
-st.markdown(msg["content"])
+    st.markdown(msg["content"])
 if prompt := st.chat_input("Cuéntame cómo te sientes..."):
     st.session_state.messages.append({"role": "user", "content": prompt})         
 with st.chat_message("user"):
-st.markdown(prompt)
+    st.markdown(prompt)
 with st.chat_message("assistant"):
 with st.spinner("Pensando..."):
 try:
@@ -80,19 +80,19 @@ col3.metric("Riesgo abandono universidad", a.get("riesgo_abandono_universidad", 
 st.markdown("**Resumen:**")
 st.info(a.get("resumen", ""))
 if a.get("señales_detectadas"):
-st.markdown("**Señales detectadas:**")
+    st.markdown("**Señales detectadas:**")
 for s in a["señales_detectadas"]:
-st.write(f"• {s}")
+    st.write(f"• {s}")
 if a.get("recomendaciones"):
-st.markdown("**Recomendaciones:**")
+    st.markdown("**Recomendaciones:**")
 for r in a["recomendaciones"]:
-st.write(f"• {r}")
+    st.write(f"• {r}")
 if a.get("urgencia") == "alta":
-st.error("⚠️ Se recomienda buscar apoyo profesional lo antes posible.")
+    st.error("⚠️ Se recomienda buscar apoyo profesional lo antes posible.")
 elif a.get("urgencia") == "media":
-st.warning("Es aconsejable hablar con alguien de confianza o un profesional.")
+    st.warning("Es aconsejable hablar con alguien de confianza o un profesional.")
 if st.button("🔄 Empezar nueva evaluación"):
-st.session_state.messages = [
+    st.session_state.messages = [
 {
 "role": "assistant",
 "content": "Hola 👋 ¿Cómo te has estado sintiendo últimamente con el trabajo o los estudios?"
