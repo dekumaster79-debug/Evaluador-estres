@@ -31,25 +31,38 @@ recomienda buscar ayuda profesional.
 st.set_page_config(page_title="Evaluador de Estrés", page_icon="🧠", layout="centered")
 st.title("🧠 Evaluador de Estrés con IA")
 st.caption("Conversación natural para detectar estrés y riesgo de renuncia o abandono universitario")
-if "messages" not in st.session_state:
-    st.session_state.messages = [
-{
-"role": "assistant",
-"content": "Hola 👋 Puedes contarme cómo te estás sintiendo respecto a tu trabajo o tus estudios. ¿Cómo te has sentido últimamente?"
-}
+if "messages" not in 
+st.session_state:
+    st.session_state.messages 
+= [
+        {
+            "role":
+"assistant",
+            "content": "Hola 👋 Puedes contarme cómo te estás sintiendo respecto a tu trabajo o tus estudios. ¿Cómo te has sentido últimamente?"
+        }
 ]
 if "analisis_final" not in st.session_state:
     st.session_state.analisis_final = None
-for msg in st.session_state.messages:
-with st.chat_message(msg["role"]):
-    st.markdown(msg["content"])
-if prompt := st.chat_input("Cuéntame cómo te sientes..."):
-    st.session_state.messages.append({"role": "user", "content": prompt})         
-with st.chat_message("user"):
-    st.markdown(prompt)
-with st.chat_message("assistant"):
-with st.spinner("Pensando..."):
-try:
+for msg in 
+st.session_state.messages:
+    with
+st.chat_message(msg["role"]):
+
+st.markdown(msg["content"])
+prompt = 
+st.chat_input("Cuéntame cómo te sientes..."):
+
+if prompt:
+    with
+st.chat_message("user"):
+        st.markdown(promt)
+
+    with
+st.chat_message("assistant"):
+        with
+st.spinner("Pensando...")
+            #Aquí va la consulta a la inteligencia artificial 
+            pass
 response = client.chat.completions.create(
 model=MODELO,
 messages=[{"role": "system", "content": SYSTEM_PROMPT}] +
@@ -63,12 +76,10 @@ st.error(f"Error: {e}")
 respuesta = "Lo siento, hubo un problema. Intenta de nuevo en unos segundos."
 if "{" in respuesta and "nivel_estres" in respuesta:
 try:
-inicio = respuesta.find("{")
-fin = respuesta.rfind("}") + 1
-analisis = json.loads(respuesta[inicio:fin])
-st.session_state.analisis_final = analisis
-except:
-pensamientos
+    #Aquí va el código que puede generar un error
+    pass
+except Exception as e:
+    st.error(f"Error: {e}")
 if st.session_state.analisis_final:
 st.divider()
 st.subheader("📊 Resultado del análisis")
